@@ -1,27 +1,51 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
-  entry: "./src/index.js",
+  entry: path.resolve(__dirname, "src/index.js"),
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "chunk-[contenthash].js",
+    clean: true,
+  },
+  devtool: "source-map",
+  optimiztion: {
+    splitChunks: {
+      chucks: "all",
+    },
+  },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "dist"),
+    },
+    port: 3000,
+    open: true,
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {
-        test: /\.svg$/,
-        use: "svg-loader",
-      },
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.(js)$/,
-        use: "babel-loader",
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|git)$/i,
+        type: "asset/resource",
       },
     ],
   },
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-  },
-  plugins: [new HtmlWebpackPlugin()],
-  mode: process.env.NODE_ENV === "production" ? "production" : "development",
+  Plugin: [
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: path.resolve(__dirname, "scr/index.html"),
+    }),
+  ],
 };
