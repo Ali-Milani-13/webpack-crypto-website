@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
+  mode: "production",
   entry: path.resolve(__dirname, "src/index.js"),
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -8,9 +9,9 @@ module.exports = {
     clean: true,
   },
   devtool: "source-map",
-  optimiztion: {
+  optimization: {
     splitChunks: {
-      chucks: "all",
+      chunks: "all",
     },
   },
   devServer: {
@@ -42,10 +43,10 @@ module.exports = {
       },
     ],
   },
-  Plugin: [
+  plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: path.resolve(__dirname, "scr/index.html"),
+      template: path.resolve(__dirname, "src/index.html"),
     }),
   ],
 };
