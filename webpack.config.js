@@ -1,5 +1,5 @@
-const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 module.exports = {
   mode: "production",
   entry: path.resolve(__dirname, "src/index.js"),
@@ -7,42 +7,45 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "chunk-[contenthash].js",
     clean: true,
+    assetModuleFilename: "[name][ext]",
   },
   devtool: "source-map",
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-    },
-  },
   devServer: {
-    static: {
-      directory: path.resolve(__dirname, "dist"),
-    },
+    static: path.resolve(__dirname, "src"),
     port: 3000,
     open: true,
     hot: true,
     compress: true,
     historyApiFallback: true,
   },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(js)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
         },
       },
       {
-        test: /\.(png|svg|jpg|jpeg|git)$/i,
-        type: "asset/resource",
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: "assets/resources",
       },
     ],
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
