@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/Ali-Milani-13/webpack-crypto-website#readme",
   "devDependencies": {
-    "babel-loader": "^8.2.4",
+    "@babel/core": "^7.17.9",
+    "babel-loader": "^8.2.5",
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.50.0",
