@@ -1,3 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 body{
-    background-color: yellow;
+    font-family: 'Roboto', sans-serif;
+}
+input{
+    accent-color: purple;
+    transition: all .2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
+    cursor:pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+         display: none;
+}
+
+.radio-group{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.menu-container{
+    box-shadow: 10px 10px 40px #878787;
+    border-radius: 15px;
+    width: 60em;
+    height: 40em;
+    margin: 50px auto 0px auto
+}
+.search-box{
+padding-top: 1em;
+display: flex;
+justify-content: center;    
 }
