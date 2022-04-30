@@ -14,16 +14,7 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
-input{
-    accent-color: purple;
-    transition: all .2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
-    cursor:pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-     -ms-user-select: none;
-         user-select: none;
-         display: none;
-}
+
 
 .radio-group{
     display: flex;
