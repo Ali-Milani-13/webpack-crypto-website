@@ -36,6 +36,7 @@ img {
   width: 12em;
   height: 12em;
   margin: 10em 5em 0 20em;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .information-holder {
   display: flex;
@@ -45,4 +46,10 @@ img {
   display: flex;
   flex-direction: column;
   gap: 1em;
+}
+footer {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 14em;
+  font-size: 0.8em;
 }
