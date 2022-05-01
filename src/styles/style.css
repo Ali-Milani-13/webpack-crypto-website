@@ -37,3 +37,12 @@ img {
   height: 12em;
   margin: 10em 5em 0 20em;
 }
+.information-holder {
+  display: flex;
+}
+.status-holder {
+  margin-top: 12em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}

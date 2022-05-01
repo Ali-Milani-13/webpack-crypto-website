@@ -10,7 +10,7 @@ label {
 .radio-group span {
   height: 20px;
   width: 20px;
-  border-radius: 50%;
+  border-radius: 5px;
   border: 3px solid purple;
   display: flex;
   align-items: center;
@@ -20,12 +20,12 @@ label {
   content: "";
   height: 10px;
   width: 10px;
-  border-radius: 50%;
+  border-radius: 2px;
   background-color: purple;
   display: block;
   border: 3px solid purple;
   transform: scale(0);
-  transition: transform 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: transform 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 form input[type="radio"]:checked ~ span::after {
   transform: scale(1);
