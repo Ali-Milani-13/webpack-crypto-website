@@ -20,6 +20,9 @@ npm install
 ```sh
 npm start or npm run build
 ```
+## Project Shot 📸
+![shot](https://user-images.githubusercontent.com/101967444/166215329-5d38367b-26dd-49ad-8631-716a2831850c.png)
+
 
 ## Author
 
