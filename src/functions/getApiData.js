@@ -11,7 +11,6 @@ export const getApiData = () => {
     )
       .then((r) => r.json())
       .then((t) => {
-        console.log(t.delta_24h);
         const price = JSON.stringify(
           parseFloat(parseFloat(t.price).toFixed(2))
         );
