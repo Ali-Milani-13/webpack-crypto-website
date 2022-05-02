@@ -1,6 +1,7 @@
 form input[type="radio"] {
   display: none;
 }
+/* Hiding default radio buttons */
 label {
   display: flex;
   gap: 0.5em;
@@ -16,6 +17,8 @@ label {
   align-items: center;
   justify-content: center;
 }
+/* Using span as new radio button*/
+
 .radio-group span:after {
   content: "";
   height: 10px;
@@ -27,6 +30,9 @@ label {
   transform: scale(0);
   transition: transform 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
+/* Using pseudo elements for inside of radio button */
+
 form input[type="radio"]:checked ~ span::after {
   transform: scale(1);
 }
+/* Activating scale effect event */

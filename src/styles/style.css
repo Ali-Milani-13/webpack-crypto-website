@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+/* Font Import */
 *,
 *::before,
 *::after {
@@ -6,11 +7,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Globally reseting default properties */
+
 .flex-center {
   display: flex;
   align-items: center;
   gap: 5px;
 }
+
+/* Utility class for cenetring */
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -27,6 +32,7 @@ body {
   height: 40em;
   margin: 50px auto 0px auto;
 }
+/* Shadow effect of container */
 .search-box {
   padding-top: 1em;
   display: flex;
@@ -38,6 +44,8 @@ img {
   margin: 10em 5em 0 20em;
   transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+/* Animating rotation */
+
 .information-holder {
   display: flex;
 }

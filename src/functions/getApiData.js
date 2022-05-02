@@ -1,9 +1,12 @@
 import { setCoinProperty } from "./setCoinProperty";
 import { makeAnimation } from "./makeAnimation";
+//import necessary functions
 const statusHolder = document.querySelector(".status-holder");
 const image = document.getElementById("currency-image");
+//grab image and information section of the coin
 const { setCoin } = setCoinProperty();
 const { animate } = makeAnimation();
+//destructring to access functions
 export const getApiData = () => {
   const clicked = (e) => {
     fetch(
@@ -13,6 +16,7 @@ export const getApiData = () => {
       .then((t) => {
         const price = JSON.stringify(
           parseFloat(parseFloat(t.price).toFixed(2))
+          //decimal number will be shorted to 1 digit and 2 decimal afer it
         );
 
         switch (e.target.value) {
@@ -22,9 +26,9 @@ export const getApiData = () => {
               "Bitcoin",
               "BTC",
               price,
-              t.delta_24h
+              t.delta_24h //changes in 24 hours received from API
             );
-            animate();
+            animate(); //animation function triggers on every click event
             break;
           case "ETH":
             setCoin(
