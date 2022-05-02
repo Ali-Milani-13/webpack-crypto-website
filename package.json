@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "build": "webpack",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,13 +20,14 @@
   "bugs": {
     "url": "https://github.com/Ali-Milani-13/webpack-crypto-website/issues"
   },
-  "homepage": "https://github.com/Ali-Milani-13/webpack-crypto-website#readme",
+  "homepage": "http://Ali-Milani-13.github.io/webpack-crypto-website",
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "babel-loader": "^8.2.5",
     "browser-sync-webpack-plugin": "^2.3.0",
     "css-loader": "^6.7.1",
+    "gh-pages": "^3.2.3",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
