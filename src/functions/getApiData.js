@@ -14,7 +14,7 @@ export const getApiData = () => {
         const price = JSON.stringify(
           parseFloat(parseFloat(t.price).toFixed(2))
         );
-        statusHolder.style.transform = "scale(1)";
+
         switch (e.target.value) {
           case "BTC":
             setCoin(
